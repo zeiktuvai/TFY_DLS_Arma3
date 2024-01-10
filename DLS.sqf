@@ -3,7 +3,6 @@
 
 	Dynamic Loadout System v1.1
 */
-TFY_fnc_GetCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_GetCustomLoadout.sqf";
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
 
 private _playerObject = player;
@@ -22,7 +21,6 @@ if ("respawnLoadouts" in _playerConfig) then
 
 	if ("all" in _respawn) then
 	{
-        hint "all";
 		private _configClasses = "true" configClasses (missionConfigFile >> "CfgRespawnInventory");
 		private _loadouts = _configClasses apply { configName _x };
 
@@ -33,7 +31,6 @@ if ("respawnLoadouts" in _playerConfig) then
 	}
 	else
 	{
-        hint "else";
 		{
 			[_playerObject, _x] call BIS_fnc_addRespawnInventory;
 		} forEach _respawn;
@@ -57,8 +54,6 @@ if("respawnOnPlayers" in _playerConfig) then
 		{
 			[INDEPENDANT,_this select 0] call BIS_fnc_addRespawnPosition;
 		};
-		default:
-		{	
-		};
+		default	{};
 	};
 };

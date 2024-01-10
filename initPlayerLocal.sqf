@@ -1,1 +1,1 @@
-#include "loadouts\player.sqf"
+#include "TFY_DLS_Arma3\DLS.sqf"
