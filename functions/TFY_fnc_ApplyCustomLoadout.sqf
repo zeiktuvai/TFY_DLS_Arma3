@@ -14,11 +14,9 @@
 	Examples:
 		[player, "TFY_Commander"] call TFY_fnc_ApplyCustomLoadout;
 
-	Dynamic Loadout System v1.0
+	Dynamic Loadout System v1.1
 */
 
 params ["_unit", "_loadout"];
 
-_ld = [_loadout] call TFY_fnc_getCustomLoadout;
-
-_unit setUnitLoadout (_ld);
+[_unit, missionConfigFile >> "CfgRespawnInventory" >> _loadout] call BIS_fnc_loadInventory;

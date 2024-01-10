@@ -11,14 +11,17 @@ The following steps will walk you through using the DLS:
     - WARNING: Make sure your `description.ext` doesn't have any respawn properties in it, also make sure class CfgRoles and CfgRespawnInventory is not in the file.
 3. In your `initPlayerLocal.sqf` (if you do not have one then you will have to create one) add the following code: `#include "TFY_DLS_Arma3\DLS.sqf"` (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
 4. For each unit that you wish to use the system with, place the below code into the units init field:
-    ```c        
-        initialLoadout = "STARTING LOADOUT";
-        respawnLoadouts = ["RESPAWN","LOADOUTS"];
-        this setVariable ["Loadout_Vars", [initialLoadout, respawnLoadouts]];    
+    ```c
+        playerConfig = createHashMapFromArray[["initialLoadout","STARTING LOADOUT"],["respawnLoadouts",["RESPAWN","LOADOUT"]],["respawnOnPlayers",0]];
+        this setVariable ["Loadout_Vars", [playerConfig]];                
     ```
     - initialLoadout is the name of the starting loadout the character will have upon spawning in.  Use the below list to pick a loadout (I will update it as new ones are added).
-    - respawnLoadouts is an array of strings, include the class name of the loadouts you want that unit to have access to when respawning. Can be one or multiple separated by commas.
-    - Leave the last line alone.
+    - respawnLoadouts is an array of strings, include the class name of the loadouts you want that unit to have access to when respawning. Can be one or multiple separated by commas.  If you want all loadouts available then simply set it to the following: `["respawnLoadouts",["all"]]`.
+    - if you wish to have players be respawn locations then keep `respawnOnPlayers` and set the number to one of the following.
+        - 0 BLUFOR - WEST
+        - 1 OPFOR - EAST
+        - 2 INDEPENDANT
+    - Leave the setVariable line alone.
 
 > NOTE: Make sure you update the contents of the `Respawn.cfg` to import the loadouts that you want to use.
 >  - To use the standard roles, you only need to include `TFY_DLS_Arma3\loadouts\Roles_standard.c` under `CfgRoles`.
