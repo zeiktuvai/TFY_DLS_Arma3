@@ -12,7 +12,7 @@ The following steps will walk you through using the DLS:
 3. In your `initPlayerLocal.sqf` (if you do not have one then you will have to create one) add the following code: `#include "TFY_DLS_Arma3\DLS.sqf"` (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
 4. For each unit that you wish to use the system with, place the below code into the units init field:
     ```c
-        playerConfig = createHashMapFromArray[["initialLoadout","STARTING LOADOUT"],["respawnLoadouts",["RESPAWN","LOADOUT"]],["respawnOnPlayers",0]];
+        playerConfig = createHashMapFromArray[["initialLoadout","STARTING LOADOUT"],["respawnLoadouts",["RESPAWN","LOADOUTS"]],["respawnOnPlayers",0]];
         this setVariable ["Loadout_Vars", [playerConfig]];                
     ```
     - initialLoadout is the name of the starting loadout the character will have upon spawning in.  Use the below list to pick a loadout (I will update it as new ones are added).
@@ -57,15 +57,5 @@ The following steps will walk you through using the DLS:
 - TFY_UAVOperator
 - TFY_VehicleCrewman
 - TFY_Medic
-- TFY_Commander-night
-- TFY_Autorifleman-night
-- TFY_Marksman-night
-- TFY_Teamleader-night
-- TFY_Rifleman-night
-- TFY_ATRifleman-night
-- TFY_AARifleman-night
-- TFY_UAVOperator-night
-- TFY_VehicleCrewman-night
-- TFY_Medic-night
 - TFY_Diver_Expl
 - TFY_Diver
