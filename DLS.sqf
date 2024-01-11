@@ -37,6 +37,12 @@ if ("respawnLoadouts" in _playerConfig) then
 	};
 };
 
+if (!"respawnLoadouts" in _playerConfig && "initialLoadout" in _playerConfig)
+{
+	private _load = _playerConfig get "initialLoadout"; 
+	[_playerObject, _load] call BIS_fnc_addRespawnInventory;
+}
+
 if("respawnOnPlayers" in _playerConfig) then
 {
 	private _side = _playerConfig get "respawnOnPlayers";
