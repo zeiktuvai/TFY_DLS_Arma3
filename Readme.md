@@ -21,8 +21,8 @@ The following steps will walk you through using the DLS:
         - 0 BLUFOR - WEST
         - 1 OPFOR - EAST
         - 2 INDEPENDANT
-    - Leave the setVariable line alone.
-    **HINT: If you set the `InitialLoadout`, but omit the `respawnLoadouts`; the script will use the initial loadout as the respawn loadout.
+    - Leave the setVariable line alone.  
+    **HINT: If you set the `InitialLoadout`, but omit the `respawnLoadouts`; the script will use the initial loadout as the respawn loadout.**
 
 > NOTE: Make sure you update the contents of the `Respawn.cfg` to import the loadouts that you want to use.
 >  - To use the standard roles, you only need to include `TFY_DLS_Arma3\loadouts\Roles_standard.c` under `CfgRoles`.
