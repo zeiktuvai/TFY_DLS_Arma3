@@ -19,15 +19,15 @@ switch (_side) do
 {
     case 0:
     {
-        [WEST,_unit select 0] call BIS_fnc_addRespawnPosition;
+        [WEST, _unit] call BIS_fnc_addRespawnPosition;
     };
     case 1:
     {
-        [EAST,_unit select 0] call BIS_fnc_addRespawnPosition;
+        [EAST, _unit] call BIS_fnc_addRespawnPosition;
     };
     case 2:
     {
-        [INDEPENDANT,_unit select 0] call BIS_fnc_addRespawnPosition;
+        [INDEPENDANT, _unit] call BIS_fnc_addRespawnPosition;
     };
     default	{};
 };
