@@ -7,6 +7,7 @@
 // Register custom functions
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
 TFY_fnc_ApplyRespawnInventories = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyRespawnInventories.sqf";
+TFY_fnc_AddPlayerRespawn = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_AddPlayerRespawn.sqf";
 
 // Declare local variables
 private _playerObject = player;
@@ -24,7 +25,7 @@ if ("initialLoadout" in _playerConfig) then
 if ("respawnLoadouts" in _playerConfig) then
 {
     private _respawn = _playerConfig get "respawnLoadouts";
-	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories
+	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
 };
 
 // Add initialLoadout as respawnLoadout if initial is set but respawn isnt
@@ -38,20 +39,5 @@ if (!("respawnLoadouts" in _playerConfig) && "initialLoadout" in _playerConfig) 
 if("respawnOnPlayers" in _playerConfig) then
 {
 	private _side = _playerConfig get "respawnOnPlayers";
-	switch (_side) do
-	{
-		case 0:
-		{
-			[WEST,_this select 0] call BIS_fnc_addRespawnPosition;
-		};
-		case 1:
-		{
-			[EAST,_this select 0] call BIS_fnc_addRespawnPosition;
-		};
-		case 2:
-		{
-			[INDEPENDANT,_this select 0] call BIS_fnc_addRespawnPosition;
-		};
-		default	{};
-	};
+	[_playerObject, _side] call TFY_fnc_AddPlayerRespawn;
 };
