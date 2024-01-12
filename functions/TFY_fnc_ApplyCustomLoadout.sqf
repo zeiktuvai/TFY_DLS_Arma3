@@ -8,9 +8,6 @@
         object - Unit object (player or unit).
         string - Name of custom loadout.
 
-	Returns:
-		bool
-
 	Examples:
 		[player, "TFY_Commander"] call TFY_fnc_ApplyCustomLoadout;
 

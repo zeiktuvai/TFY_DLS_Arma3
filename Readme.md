@@ -1,4 +1,4 @@
-# Using the Dynamic Loadout System
+# Dynamic Loadout System for Arma 3
 
 The Dynamic Loadout System is intended to make using standard defined loadouts much easier.  Loadouts defined in ACE Arsenal can be inported into this system and used to apply the loadouts to a unit on initial spawn, and allowing players to select their loadout when respawning.
 
