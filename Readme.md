@@ -59,3 +59,5 @@ The following steps will walk you through using the DLS:
 - TFY_Medic
 - TFY_Diver_Expl
 - TFY_Diver
+
+[Change Log](/Docs/Changelog.md)
