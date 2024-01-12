@@ -6,6 +6,7 @@
 ## [1.1] - 2024-01-11
 
 ### Added 
+    - Respawn loadout is now added based on `initialLoadout` when the `respawnLoadout` property is omitted.
     - Null handling for player objects that do not have properties set.
 
 ### Changed
