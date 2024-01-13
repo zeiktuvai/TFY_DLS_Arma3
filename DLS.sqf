@@ -12,13 +12,14 @@ DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
 
 // Declare local variables
 private _playerClass = typeOf player;
+private _playerObject = player;
 
 // Get class loadouts
 private _playerLoadout = [_playerClass] call DLS_GetLoadout;
-hint str _playerLoadout;
+
 
 // Check for null loadout var
-if (!isNull _playerLoadout) then
+if (!(isNil "_playerLoadout")) then
 {	
 	// Set initial loadout
 	[_playerObject, _playerLoadout select 0] call TFY_fnc_ApplyCustomLoadout;

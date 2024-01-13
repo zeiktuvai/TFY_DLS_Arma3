@@ -16,8 +16,6 @@
 params ["_class"];
 private ["_soldierClasses", "_initialLoadout", "_respawnLoadouts", "_return"];
 
-
-
 _soldierClasses = createHashMapFromArray 
 [	
 	["B_Soldier_F", ["TFY_Rifleman"]],
@@ -48,13 +46,13 @@ _soldierClasses = createHashMapFromArray
 	["B_soldier_LAT2_F", ["TFY_ATRifleman"]],
 	["B_diver_F", ["TFY_Diver"]],
 	["B_diver_TL_F", ["TFY_Diver"]],
-	["B_diver_exp_F", ["TFY_Diver_Expl"]],
+	["B_diver_exp_F", ["TFY_Diver_Expl"]]
 ];
 
 if (_class in _soldierClasses) then {
 	_initialLoadout = _soldierClasses get _class select 0;
 	_respawnLoadouts = _soldierClasses get _class;
 	_return = [_initialLoadout, _respawnLoadouts];
-}
+};
 
 _return;
