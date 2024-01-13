@@ -51,9 +51,10 @@ _soldierClasses = createHashMapFromArray
 	["B_diver_exp_F", ["TFY_Diver_Expl"]],
 ];
 
-_initialLoadout = _soldierClasses get _class select 0;
-_respawnLoadouts = _soldierClasses get _class;
+if (_class in _soldierClasses) then {
+	_initialLoadout = _soldierClasses get _class select 0;
+	_respawnLoadouts = _soldierClasses get _class;
+	_return = [_initialLoadout, _respawnLoadouts];
+}
 
-_return = [_initialLoadout, _respawnLoadouts];
-
-hint str _return;
+_return;

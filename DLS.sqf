@@ -10,13 +10,12 @@ TFY_fnc_ApplyRespawnInventories = compile preprocessFile "TFY_DLS_Arma3\function
 TFY_fnc_AddPlayerRespawn = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_AddPlayerRespawn.sqf";
 DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
 
-private ["_playerClass", "_playerLoadout"];
-
 // Declare local variables
-_playerClass = typeOf player;
+private _playerClass = typeOf player;
 
 // Get class loadouts
-_playerLoadout = [_playerClass] call DLS_GetLoadout;
+private _playerLoadout = [_playerClass] call DLS_GetLoadout;
+hint str _playerLoadout;
 
 // Check for null loadout var
 if (!isNull _playerLoadout) then
