@@ -8,36 +8,29 @@
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
 TFY_fnc_ApplyRespawnInventories = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyRespawnInventories.sqf";
 TFY_fnc_AddPlayerRespawn = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_AddPlayerRespawn.sqf";
+DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
+
+private ["_playerClass", "_playerLoadout"];
 
 // Declare local variables
-private _playerObject = player;
-_vars = player getVariable ["Loadout_Vars",[]];
-_vars params ["_playerConfig"];
+_playerClass = typeOf player;
 
-// Check hashmap for initialLoadout key
-if ("initialLoadout" in _playerConfig) then
-{
-	private _initial = _playerConfig get "initialLoadout"; 
-	[_playerObject, _initial] call TFY_fnc_ApplyCustomLoadout;
+// Get class loadouts
+_playerLoadout = [_playerClass] call DLS_GetLoadout;
+
+// Check for null loadout var
+if (!isNull _playerLoadout) then
+{	
+	// Set initial loadout
+	[_playerObject, _playerLoadout select 0] call TFY_fnc_ApplyCustomLoadout;
+	// Set respawn loadout
+	[_playerObject, _playerLoadout select 1] call TFY_fnc_ApplyRespawnInventories;
 };
 
-// Check hashmap for respawnLoadouts key
-if ("respawnLoadouts" in _playerConfig) then
-{
-    private _respawn = _playerConfig get "respawnLoadouts";
-	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
-};
-
-// Add initialLoadout as respawnLoadout if initial is set but respawn isnt
-if (!("respawnLoadouts" in _playerConfig) && "initialLoadout" in _playerConfig) then
-{
-	private _load = _playerConfig get "initialLoadout"; 
-	[_playerObject, _load] call BIS_fnc_addRespawnInventory;
-};
 
 // Set each player as respawn point if enabled
-if("respawnOnPlayers" in _playerConfig) then
-{
-	private _side = _playerConfig get "respawnOnPlayers";
-	[_playerObject, _side] call TFY_fnc_AddPlayerRespawn;
-};
+//if("respawnOnPlayers" in _playerConfig) then
+//{
+//	private _side = _playerConfig get "respawnOnPlayers";
+//	[_playerObject, _side] call TFY_fnc_AddPlayerRespawn;
+//};

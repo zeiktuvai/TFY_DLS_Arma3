@@ -27,21 +27,18 @@ The following steps will walk you through using the DLS:
 > NOTE: Make sure you update the contents of the `Respawn.cfg` to import the loadouts that you want to use.
 >  - To use the standard roles, you only need to include `TFY_DLS_Arma3\loadouts\Roles_standard.c` under `CfgRoles`.
 >  - Make sure you choose only one standard set of loadouts under `CfgRespawnInventory`; either `Loadouts_standard.c` or `Loadouts_standard_night.c`. They use the same class name so a conflict will occur if you include both of them.
->  - To make use of the Special forces roles just add `TFY_DLS_Arma3\loadouts\Roles_SF.c` to `CfgRoles` and `TFY_DLS_Arma3\loadouts\Loadouts_SF.c` to `CfgRespawnInventory`.
 >  - As we add more loadouts they will be in separate loadout files, however they may use the same role file.  (i.e. Adding a russian loadout file for russian equipment but they use the standard roles.)
 
 ```c
     class CfgRoles
     {
-        #include "TFY_DLS_Arma3\loadouts\Roles_standard.c"
-        #include "TFY_DLS_Arma3\loadouts\Roles_SF.c"
+        #include "TFY_DLS_Arma3\loadouts\Roles_NATO.c"        
     };
 
 
     class CfgRespawnInventory
     {
-        #include "TFY_DLS_Arma3\loadouts\Loadouts_standard.c"
-        #include "TFY_DLS_Arma3\loadouts\Loadouts_SF.c"
+        #include "TFY_DLS_Arma3\loadouts\Loadouts_NATO.c"        
     };
 ```
 
