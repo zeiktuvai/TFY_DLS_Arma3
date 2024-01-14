@@ -9,7 +9,7 @@ private _enableRespawnOnPlayer = true;
 // Set faction for player respawn positions (0: BLUFOR, 1: OPFOR, 2: INDEPENDANT)
 private _RoPFaction = 0;
 // Enable Night Uniform
-private _night = true;
+private _night = false;
 
 // ====== DO NOT MODIFY BELOW THIS LINE ======
 // Register custom functions

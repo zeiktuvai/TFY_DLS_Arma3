@@ -1,7 +1,11 @@
 # Changelog
 
 ## [Unreleased]
-- Code to automatically infer loadouts based on object class placed (i.e. NATO Riflemand automatically gets TFY_Rifleman loadout.)
+
+## [1.2] - 2023-01-14
+- Updated code to have configuration in DLS.sqf instead of pasting code in each player object.
+- Updated DLS.sqf to infer loadouts based on class of NATO unit placed.
+- Added TFAR radios to all loadouts.
 
 ## [1.1] - 2024-01-11
 
