@@ -8,10 +8,10 @@
 private _enableRespawnOnPlayer = true;
 // Set faction for player respawn positions (0: BLUFOR, 1: OPFOR, 2: INDEPENDANT)
 private _RoPFaction = 0;
-// Enable TFAR radios
-private _enableTFAR = true;
+// Enable Night Uniform
+private _night = true;
 
-
+// ====== DO NOT MODIFY BELOW THIS LINE ======
 // Register custom functions
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
 TFY_fnc_ApplyRespawnInventories = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyRespawnInventories.sqf";
@@ -23,7 +23,8 @@ private _playerClass = typeOf player;
 private _playerObject = player;
 
 // Get class loadouts
-private _playerLoadout = [_playerClass] call DLS_GetLoadout;
+private _ldType = if (_night == true) then { 1 } else { 0 };
+private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 
 // Check for null loadout var
 if (!(isNil "_playerLoadout")) then
@@ -40,10 +41,3 @@ if(_enableRespawnOnPlayer == true) then
 	[_playerObject, 0] call TFY_fnc_AddPlayerRespawn;
 };
 
-if(_enableTFAR == true) then
-{
-	_playerObject unassignItem "rhsusf_radio_anprc152";
-	_playerObject removeItem "rhsusf_radio_anprc152";
-	_playerObject addItem "TFAR_anprc152";
-	_playerObject assignItem "TFAR_anprc152";
-};
