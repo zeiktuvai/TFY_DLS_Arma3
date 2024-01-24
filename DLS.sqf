@@ -14,7 +14,7 @@
 //private _ACE_endMission = true;
 //Set the trigger name to trig_end_mission for this to work.
 
-#include "TFY_DLS_Arma3\DLS_Settings.sqf"
+#include "DLS_Settings.sqf"
 
 // Register custom functions
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
