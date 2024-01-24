@@ -7,10 +7,10 @@ It achieves this by recognizing what NATO units have been placed and automatical
 The following steps will walk you through using the DLS:
 
 1. Clone this repo into your mission folder using `git clone https://github.com/zeiktuvai/TFY_DLS_Arma3.git` (You will be able to update it easily if new loadouts are added by moving into the `TFY_DLS_Arma3` folder and running `git pull`).
-2. Modify your `description.ext` to have the following code at the top: `#include "TFY_DLS_Arma3\Respawn.cfg"`.  (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
+2. Modify your `description.ext` to have the following code at the top: `#include "TFY_DLS_Arma3\Respawn.cfg"`.  (I have included one if you wish to use it, just copy it from the example files folder into your main mission folder).
     - WARNING: Make sure your `description.ext` doesn't have any respawn properties in it, also make sure class CfgRoles and CfgRespawnInventory is not in the file.
-3. In your `initPlayerLocal.sqf` (if you do not have one then you will have to create one) add the following code: `#include "TFY_DLS_Arma3\DLS.sqf"` (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
-4. Create a file in your root mission folder called `DLS_Settings.sqf` (Or copy the one provided into your root mission folder.) and update the settings to your needs.  Right now the following options are available:  
+3. In your `initPlayerLocal.sqf` (if you do not have one then you will have to create one) add the following code: `#include "TFY_DLS_Arma3\DLS.sqf"` (I have included one if you wish to use it, just copy it from the example files folder into your main mission folder).
+4. Create a file in your root mission folder called `DLS_Settings.sqf` (Or copy the one in the example files folder into your root mission folder.) and update the settings to your needs.  Right now the following options are available:  
     - Enable Respawn positions on each player. (true: to enable; false: to disable).
         - _RoPFaction needs to be set as well, for blufor it is 0.
     - Enable night uniforms.
