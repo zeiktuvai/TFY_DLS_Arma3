@@ -10,6 +10,9 @@ private _enableRespawnOnPlayer = true;
 private _RoPFaction = 0;
 // Enable Night Uniform
 private _night = false;
+// Enable End Mission ACE Self interaction option. (Be sure to give a unit the SL or GM variable name; see readme.)
+private _ACE_endMission = true;
+//Set the trigger name to trig_end_mission for this to work.
 
 // ====== DO NOT MODIFY BELOW THIS LINE ======
 // Register custom functions
@@ -41,3 +44,8 @@ if(_enableRespawnOnPlayer == true) then
 	[_playerObject, 0] call TFY_fnc_AddPlayerRespawn;
 };
 
+// Set 
+if (vehicleVarName player == 'SL' || vehicleVarName player == 'GM') then {
+    _end_mission = ["end_mission","End Mission","",{ ["end"] remoteExec ["BIS_fnc_endMission", 0]; }, { triggerActivated trig_end_mission }] call ace_interact_menu_fnc_createAction;
+    [player, 1, ["ACE_SelfActions"], _end_mission] call ace_interact_menu_fnc_addActionToObject;
+};
