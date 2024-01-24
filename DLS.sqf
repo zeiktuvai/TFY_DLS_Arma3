@@ -5,16 +5,17 @@
 */
 // Update These Values:
 // Enable respawn selection on each player.
-private _enableRespawnOnPlayer = true;
+//private _enableRespawnOnPlayer = true;
 // Set faction for player respawn positions (0: BLUFOR, 1: OPFOR, 2: INDEPENDANT)
-private _RoPFaction = 0;
+//private _RoPFaction = 0;
 // Enable Night Uniform
-private _night = false;
+//private _night = false;
 // Enable End Mission ACE Self interaction option. (Be sure to give a unit the SL or GM variable name; see readme.)
-private _ACE_endMission = true;
+//private _ACE_endMission = true;
 //Set the trigger name to trig_end_mission for this to work.
 
-// ====== DO NOT MODIFY BELOW THIS LINE ======
+#include "TFY_DLS_Arma3\DLS_Settings.sqf"
+
 // Register custom functions
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";
 TFY_fnc_ApplyRespawnInventories = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyRespawnInventories.sqf";
@@ -44,10 +45,13 @@ if(_enableRespawnOnPlayer == true) then
 	[_playerObject, 0] call TFY_fnc_AddPlayerRespawn;
 };
 
-// Set 
-if (vehicleVarName player == 'SL' || vehicleVarName player == 'GM') then {
-    _end_mission = ["end_mission","End Mission","",{ ["end"] remoteExec ["BIS_fnc_endMission", 0]; 
-	["Primary Mission Objectives Complete! CDR/GM use ACE Self menu to end the mission when ready"] remoteExec ["hint", 0];}, 
-	{ triggerActivated trig_end_mission }] call ace_interact_menu_fnc_createAction;
-    [player, 1, ["ACE_SelfActions"], _end_mission] call ace_interact_menu_fnc_addActionToObject;
+// Set end mission menu option 
+if(_ACE_endMission) then
+{
+	if (vehicleVarName player == 'SL' || vehicleVarName player == 'GM') then 
+	{ 
+		_end_mission = ["end_mission","End Mission","",{ ["end"] remoteExec ["BIS_fnc_endMission", 0]; }, 
+		{ triggerActivated trig_end_mission }] call ace_interact_menu_fnc_createAction;
+		[player, 1, ["ACE_SelfActions"], _end_mission] call ace_interact_menu_fnc_addActionToObject;
+	};
 };
