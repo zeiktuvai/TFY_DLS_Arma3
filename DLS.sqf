@@ -46,6 +46,8 @@ if(_enableRespawnOnPlayer == true) then
 
 // Set 
 if (vehicleVarName player == 'SL' || vehicleVarName player == 'GM') then {
-    _end_mission = ["end_mission","End Mission","",{ ["end"] remoteExec ["BIS_fnc_endMission", 0]; }, { triggerActivated trig_end_mission }] call ace_interact_menu_fnc_createAction;
+    _end_mission = ["end_mission","End Mission","",{ ["end"] remoteExec ["BIS_fnc_endMission", 0]; 
+	["Primary Mission Objectives Complete! CDR/GM use ACE Self menu to end the mission when ready"] remoteExec ["hint"];}, 
+	{ triggerActivated trig_end_mission }] call ace_interact_menu_fnc_createAction;
     [player, 1, ["ACE_SelfActions"], _end_mission] call ace_interact_menu_fnc_addActionToObject;
 };
