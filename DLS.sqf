@@ -1,20 +1,9 @@
 /*
 	Author: zeik_tuvai
 
-	Dynamic Loadout System v1.2
+	Dynamic Loadout System v1.3
 */
-// Update These Values:
-// Enable respawn selection on each player.
-//private _enableRespawnOnPlayer = true;
-// Set faction for player respawn positions (0: BLUFOR, 1: OPFOR, 2: INDEPENDANT)
-//private _RoPFaction = 0;
-// Enable Night Uniform
-//private _night = false;
-// Enable End Mission ACE Self interaction option. (Be sure to give a unit the SL or GM variable name; see readme.)
-//private _ACE_endMission = true;
-//Set the trigger name to trig_end_mission for this to work.
-
-#include "DLS_Settings.sqf"
+#include "..\DLS_Settings.sqf"
 
 // Register custom functions
 TFY_fnc_ApplyCustomLoadout = compile preprocessFile "TFY_DLS_Arma3\functions\TFY_fnc_ApplyCustomLoadout.sqf";

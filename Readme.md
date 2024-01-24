@@ -10,10 +10,14 @@ The following steps will walk you through using the DLS:
 2. Modify your `description.ext` to have the following code at the top: `#include "TFY_DLS_Arma3\Respawn.cfg"`.  (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
     - WARNING: Make sure your `description.ext` doesn't have any respawn properties in it, also make sure class CfgRoles and CfgRespawnInventory is not in the file.
 3. In your `initPlayerLocal.sqf` (if you do not have one then you will have to create one) add the following code: `#include "TFY_DLS_Arma3\DLS.sqf"` (I have included one if you wish to use it, just copy it from this folder into your main mission folder).
-4. Update the paramaters at the top of DLS.sqf to change features per mission.  Currently, the following features are:
+4. Create a file in your root mission folder called `DLS_Settings.sqf` (Or copy the one provided into your root mission folder.) and update the settings to your needs.  Right now the following options are available:  
     - Enable Respawn positions on each player. (true: to enable; false: to disable).
         - _RoPFaction needs to be set as well, for blufor it is 0.
     - Enable night uniforms.
+    - ACE End Mission Option.
+        - When this option is enabled, an ACE self interaction menu item will be added to certain players upon activation of a trigger.
+        - Add a trigger to your mission with the mission ending criteria and name it `trig_end_mission`.
+        - Two players can have the option to end the mission, give the player unit the name SL or GM to add the menu item to them. (SL Squad Leader/Commander; GM Game Master).
 5. Place your playable units on the map using the standard **NATO - MEN** units. (See below for a list of supported units).
 
 **Supported NATO Units**
