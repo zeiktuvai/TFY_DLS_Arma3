@@ -10,7 +10,7 @@
 	Examples:
 		[class] call DLS_Loadouts;
 
-	Dynamic Loadout System v1.2
+	Dynamic Loadout System v1.3
 */
 
 params ["_class", "_type"];
@@ -25,7 +25,7 @@ switch (_type) do
 		["B_Soldier_A_F", ["TFY_Rifleman"]],
 		["B_soldier_AR_F", ["TFY_Rifleman"]],
 		["B_Soldier_lite_F", ["TFY_Rifleman"]],
-		["B_Soldier_GL_F", ["TFY_Rifleman"]],
+		["B_Soldier_GL_F", ["TFY_Grenadier"]],
 		["B_medic_F", ["TFY_Medic"]],
 		["B_crew_F", ["TFY_VehicleCrewman"]],
 		["B_engineer_F", ["TFY_VehicleCrewman"]],
@@ -59,7 +59,7 @@ switch (_type) do
 		["B_Soldier_A_F", ["TFY_Rifleman_N"]],
 		["B_soldier_AR_F", ["TFY_Rifleman_N"]],
 		["B_Soldier_lite_F", ["TFY_Rifleman_N"]],
-		["B_Soldier_GL_F", ["TFY_Rifleman_N"]],
+		["B_Soldier_GL_F", ["TFY_Grenadier_N"]],
 		["B_medic_F", ["TFY_Medic_N"]],
 		["B_crew_F", ["TFY_VehicleCrewman_N"]],
 		["B_engineer_F", ["TFY_VehicleCrewman_N"]],
