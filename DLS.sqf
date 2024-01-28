@@ -20,6 +20,18 @@ _override = player getVariable ["override", nil];
 private _ldType = if (_night == true) then { 1 } else { 0 };
 private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 
+// Declare function variables
+Apply_Loadout =
+{
+	params ["_unit", "_loadout"];
+	[_unit, _loadout] call TFY_fnc_ApplyCustomLoadout;
+};
+Apply_Respawn =
+{
+	params ["_unit", "_respawn"];
+	[_unit, _respawn] call TFY_fnc_ApplyRespawnInventories;
+};
+
 // Check for initial loadout override
 if (!isNil "_override") then
 {
@@ -27,18 +39,26 @@ if (!isNil "_override") then
 	if ("initialLoadout" in _config) then
 	{
 		private _initial = _config get "initialLoadout";
-		[_playerObject, _initial] call TFY_fnc_ApplyCustomLoadout;
+		[_playerObject, _initial] call Apply_Loadout;
+	}
+	else
+	{
+		if (count _playerLoadout > 0) then
+		{
+			[_playerObject, _playerLoadout select 0] call Apply_Loadout;
+		};
 	};
 }
 else
 {
 	// Apply Audomatic Loadout
-	if (!(isNil "_playerLoadout")) then
-	{	
+	if (count _playerLoadout > 0) then
+	{
 		// Set initial loadout
-		[_playerObject, _playerLoadout select 0] call TFY_fnc_ApplyCustomLoadout;
+		[_playerObject, _playerLoadout select 0] call Apply_Loadout;
 	};
 };
+
 
 // Check for respawn loadout override
 if (!isNil "_override") then
@@ -47,16 +67,23 @@ if (!isNil "_override") then
 	if ("respawnLoadouts" in _config) then
 	{
 		private _respawn = _config get "respawnLoadouts";
-		[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
+		[_playerObject, _respawn] call Apply_Respawn
+	}
+	else
+	{
+		if (count _playerLoadout > 0) then
+		{
+			[_playerObject, _playerLoadout select 1] call Apply_Respawn
+		};
 	};
 }
 else
 {
 	// Apply Audomatic Loadout
-	if (!(isNil "_playerLoadout")) then
+	if (count _playerLoadout > 0) then
 	{	
 		// Set respawn loadout
-		[_playerObject, _playerLoadout select 1] call TFY_fnc_ApplyRespawnInventories;
+		[_playerObject, _playerLoadout select 1] call Apply_Respawn
 	};
 };
 

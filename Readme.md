@@ -20,6 +20,7 @@ The following steps will walk you through using the DLS:
         - Two players can have the option to end the mission, give the player unit the name SL or GM to add the menu item to them. (SL Squad Leader/Commander; GM Game Master).
 5. Place your playable units on the map using the standard **NATO - MEN** units. (See below for a list of supported units).
 
+
 **Supported NATO Units**
 - Ammo Bearer
 - Autorifleman
@@ -36,6 +37,31 @@ The following steps will walk you through using the DLS:
 - Squad Leader
 - Team Leader
 - All UAV/UGV
+
+# Overriding defatult loadouts
+
+You can ignore the auto chosen loadout 
+
+playerConfig = createHashMapFromArray[["initialLoadout","TFY_Commander"],["respawnLoadouts",["all"]]];
+this setVariable ["override", [playerConfig]];
+
+Loadout List
+
+TFY_Commander
+TFY_Autorifleman
+TFY_Marksman
+TFY_Teamleader
+TFY_Rifleman
+TFY_ATRifleman
+TFY_AARifleman
+TFY_UAVOperator
+TFY_VehicleCrewman
+TFY_Medic
+TFY_Diver_Expl
+TFY_Diver
+TFY_Grenadier
+
+
 
 [Change Log](/Docs/Changelog.md)  
 
