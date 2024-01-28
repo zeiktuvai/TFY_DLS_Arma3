@@ -11,7 +11,7 @@
 	Examples:
 		[player, loadouts] call TFY_fnc_ApplyRespawnInventories;
 
-	Dynamic Loadout System v1.2
+	Dynamic Loadout System v1.4
 */
 
 params ["_unit", "_respawn"];

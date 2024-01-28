@@ -14,7 +14,7 @@ DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
 // Declare local variables
 private _playerClass = typeOf player;
 private _playerObject = player;
-_override = player getVariable ["LoadoutOverride", nil];
+_override = player getVariable ["override", nil];
 
 // Get class loadouts
 private _ldType = if (_night == true) then { 1 } else { 0 };
