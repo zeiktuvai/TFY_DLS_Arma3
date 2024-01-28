@@ -25,7 +25,7 @@ private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 if ("initialLoadout" in _config) then
 {
 	private _initial = _config get "initialLoadout"; 
-	[_playerObject, _initial select 0] call TFY_fnc_ApplyCustomLoadout;
+	[_playerObject, _initial] call TFY_fnc_ApplyCustomLoadout;
 }
 else
 {
