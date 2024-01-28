@@ -37,4 +37,3 @@ private _cond = {
 private _startConvo = ["start conversation",format ["Start Conversation with %1", name _unit],"",_statement, _cond, {}, [_values]] call ace_interact_menu_fnc_createAction; 
 
 [_unit,0,["ACE_MainActions"],_startConvo] call ace_interact_menu_fnc_addActionToObject;
-hint str _startConvo;
