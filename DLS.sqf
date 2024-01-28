@@ -22,7 +22,7 @@ private _ldType = if (_night == true) then { 1 } else { 0 };
 private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 
 // Check for initial loadout override
-if (!isNil _config && "initialLoadout" in _config) then
+if ("initialLoadout" in _config) then
 {
 	private _initial = _config get "initialLoadout"; 
 	[_playerObject, _initial select 0] call TFY_fnc_ApplyCustomLoadout;
@@ -38,7 +38,7 @@ else
 };
 
 // Check for respawn loadout override
-if (!isNil _config && "respawnLoadouts" in _config) then
+if ("respawnLoadouts" in _config) then
 {
 	private _respawn = _config get "respawnLoadouts";
 	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
