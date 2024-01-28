@@ -1,7 +1,7 @@
 /*
 	Author: zeik_tuvai
 
-	Dynamic Loadout System v1.3
+	Dynamic Loadout System v1.4
 */
 #include "..\DLS_Settings.sqf"
 
@@ -14,18 +14,43 @@ DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
 // Declare local variables
 private _playerClass = typeOf player;
 private _playerObject = player;
+_override = player getVariable ["LoadoutOverride",[]];
+_override params ["_config"];
 
 // Get class loadouts
 private _ldType = if (_night == true) then { 1 } else { 0 };
 private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 
-// Check for null loadout var
-if (!(isNil "_playerLoadout")) then
-{	
-	// Set initial loadout
-	[_playerObject, _playerLoadout select 0] call TFY_fnc_ApplyCustomLoadout;
-	// Set respawn loadout
-	[_playerObject, _playerLoadout select 1] call TFY_fnc_ApplyRespawnInventories;
+// Check for initial loadout override
+if (!isNil _config && "initialLoadout" in _config) then
+{
+	private _initial = _config get "initialLoadout"; 
+	[_playerObject, _initial select 0] call TFY_fnc_ApplyCustomLoadout;
+}
+else
+{
+	// Apply Audomatic Loadout
+	if (!(isNil "_playerLoadout")) then
+	{	
+		// Set initial loadout
+		[_playerObject, _playerLoadout select 0] call TFY_fnc_ApplyCustomLoadout;
+	};
+};
+
+// Check for respawn loadout override
+if (!isNil _config && "respawnLoadouts" in _config) then
+{
+	private _respawn = _config get "respawnLoadouts";
+	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
+}
+else
+{
+	// Apply Audomatic Loadout
+	if (!(isNil "_playerLoadout")) then
+	{	
+		// Set respawn loadout
+		[_playerObject, _playerLoadout select 1] call TFY_fnc_ApplyRespawnInventories;
+	};
 };
 
 // Set each player as respawn point if enabled
