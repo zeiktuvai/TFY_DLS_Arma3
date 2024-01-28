@@ -40,28 +40,29 @@ The following steps will walk you through using the DLS:
 
 # Overriding defatult loadouts
 
-You can ignore the auto chosen loadout 
+You can ignore the auto chosen loadout or if using units that are not supported, you can use this to apply loadouts to them.  In the units init add the following code:
 
-playerConfig = createHashMapFromArray[["initialLoadout","TFY_Commander"],["respawnLoadouts",["all"]]];
-this setVariable ["override", [playerConfig]];
+```c
+    playerConfig = createHashMapFromArray[["initialLoadout","STARTING LOADOUT"],["respawnLoadouts",["RESPAWN","LOADOUTS"]]];
+    this setVariable ["override", [playerConfig]];                
+```
+You can use the below list to set the initial loadout and any respawn loadouts you want to add.  Remember if you put `["respawnLoadouts",["all"]]` in the respawn loadouts array it will give that unit all loadouts.
 
-Loadout List
+**Loadout List**
 
-TFY_Commander
-TFY_Autorifleman
-TFY_Marksman
-TFY_Teamleader
-TFY_Rifleman
-TFY_ATRifleman
-TFY_AARifleman
-TFY_UAVOperator
-TFY_VehicleCrewman
-TFY_Medic
-TFY_Diver_Expl
-TFY_Diver
-TFY_Grenadier
-
-
+- TFY_Commander
+- TFY_Autorifleman
+- TFY_Marksman
+- TFY_Teamleader
+- TFY_Rifleman
+- TFY_ATRifleman
+- TFY_AARifleman
+- TFY_UAVOperator
+- TFY_VehicleCrewman
+- TFY_Medic
+- TFY_Diver_Expl
+- TFY_Diver
+- TFY_Grenadier
 
 [Change Log](/Docs/Changelog.md)  
 

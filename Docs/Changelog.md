@@ -2,7 +2,15 @@
 
 ## [Unreleased]
 
-## [1.2] - 2023-01-14
+## [1.4] - 2024-01-28
+- Updated DLS to allow overriding automatic selection by putting variable in unit init field.
+- This allows for using loadouts with non-automatic unit classes.
+
+## [1.3]
+- Updated DLS to get the config automatically based on unit class for certain nato units.
+- Moved config into separate file to allow for git pull to work better.
+
+## [1.2] - 2024-01-14
 - Updated code to have configuration in DLS.sqf instead of pasting code in each player object.
 - Updated DLS.sqf to infer loadouts based on class of NATO unit placed.
 - Added TFAR radios to all loadouts.
