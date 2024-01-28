@@ -67,7 +67,7 @@ if (!isNil "_override") then
 	if ("respawnLoadouts" in _config) then
 	{
 		private _respawn = _config get "respawnLoadouts";
-		[_playerObject, _respawn] call Apply_Respawn
+		[_playerObject, _respawn] call Apply_Respawn;
 	}
 	else
 	{

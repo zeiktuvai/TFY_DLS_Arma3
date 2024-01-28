@@ -15,7 +15,7 @@
 
 params ["_class", "_type"];
 private ["_soldierClasses", "_initialLoadout", "_respawnLoadouts", "_return"];
-_return = nil;
+_return = [];
 
 switch (_type) do
 {
