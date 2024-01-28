@@ -15,6 +15,7 @@
 
 params ["_class", "_type"];
 private ["_soldierClasses", "_initialLoadout", "_respawnLoadouts", "_return"];
+_return = [];
 
 switch (_type) do
 {
@@ -91,7 +92,7 @@ switch (_type) do
 if (_class in _soldierClasses) then {
 	_initialLoadout = _soldierClasses get _class select 0;
 	_respawnLoadouts = _soldierClasses get _class;
-	_return = [_initialLoadout, _respawnLoadouts];
+	_return = [_initialLoadout, _respawnLoadouts];	
 };
 
 _return;

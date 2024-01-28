@@ -14,18 +14,21 @@ DLS_GetLoadout = compile preprocessFile "TFY_DLS_Arma3\DLS_Loadouts.sqf";
 // Declare local variables
 private _playerClass = typeOf player;
 private _playerObject = player;
-_override = player getVariable ["LoadoutOverride",[]];
-_override params ["_config"];
+_override = player getVariable ["LoadoutOverride", nil];
 
 // Get class loadouts
 private _ldType = if (_night == true) then { 1 } else { 0 };
 private _playerLoadout = [_playerClass, _ldType] call DLS_GetLoadout;
 
 // Check for initial loadout override
-if ("initialLoadout" in _config) then
+if (!isNil "_override") then
 {
-	private _initial = _config get "initialLoadout"; 
-	[_playerObject, _initial] call TFY_fnc_ApplyCustomLoadout;
+	_override params ["_config"];
+	if ("initialLoadout" in _config) then
+	{
+		private _initial = _config get "initialLoadout";
+		[_playerObject, _initial] call TFY_fnc_ApplyCustomLoadout;
+	};
 }
 else
 {
@@ -38,10 +41,14 @@ else
 };
 
 // Check for respawn loadout override
-if ("respawnLoadouts" in _config) then
+if (!isNil "_override") then
 {
-	private _respawn = _config get "respawnLoadouts";
-	[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
+	_override params ["_config"];
+	if ("respawnLoadouts" in _config) then
+	{
+		private _respawn = _config get "respawnLoadouts";
+		[_playerObject, _respawn] call TFY_fnc_ApplyRespawnInventories;
+	};
 }
 else
 {

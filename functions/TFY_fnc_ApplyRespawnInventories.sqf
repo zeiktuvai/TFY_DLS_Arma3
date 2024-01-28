@@ -20,10 +20,11 @@ if ("all" in _respawn) then
 {
     private _configClasses = "true" configClasses (missionConfigFile >> "CfgRespawnInventory");
     private _loadouts = _configClasses apply { configName _x };
-
+    private _ld = _loadouts select { !(["_N", _x] call BIS_fnc_inString) };
+    
     {
         [_unit, _x] call BIS_fnc_addRespawnInventory;
-    } forEach _loadouts;
+    } forEach _ld;
 
 }
 else
