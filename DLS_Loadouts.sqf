@@ -50,7 +50,7 @@ switch (_type) do
 		["B_soldier_LAT2_F", ["TFY_ATRifleman"]],
 		["B_diver_F", ["TFY_Diver"]],
 		["B_diver_TL_F", ["TFY_Diver"]],
-		["B_diver_exp_F", ["TFY_Diver_Expl"]]
+		["B_diver_exp_F", ["TFY_Diver_Expl"]],
 		["B_soldier_mine_F", ["TFY_MineSpec"]]
 		];
 	};
@@ -85,7 +85,7 @@ switch (_type) do
 		["B_soldier_LAT2_F", ["TFY_ATRifleman_N"]],
 		["B_diver_F", ["TFY_Diver"]],
 		["B_diver_TL_F", ["TFY_Diver"]],
-		["B_diver_exp_F", ["TFY_Diver_Expl"]]
+		["B_diver_exp_F", ["TFY_Diver_Expl"]],
 		["B_soldier_mine_F", ["TFY_MineSpec"]]
 		];
 	};
