@@ -1,10 +1,12 @@
 # Changelog
 
 ## [Unreleased]
+- Added helper script for filling a vehicle with default items helpful when using ace and AT/AA tools on respawn.
 
 ## [1.4] - 2024-01-28
 - Updated DLS to allow overriding automatic selection by putting variable in unit init field.
 - This allows for using loadouts with non-automatic unit classes.
+- Added helper script for creating ACE interaction to start conversation with NPC
 
 ## [1.3]
 - Updated DLS to get the config automatically based on unit class for certain nato units.
