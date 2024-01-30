@@ -12,7 +12,7 @@
 	Examples:
 		Assuming you place this helper script into a folder called scripts in your root mission directory.  Place this in the expression field
 		of the vehicle respawn module linked to your vic.
-		nul = [_this select 0, 1] execVM "vic.sqf";
+		nul = [_this select 0, 1] execVM "scripts\tfy_helper_vic-respawn.sqf";
 
 	Script version 1.0
 */
