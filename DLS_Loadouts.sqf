@@ -51,6 +51,7 @@ switch (_type) do
 		["B_diver_F", ["TFY_Diver"]],
 		["B_diver_TL_F", ["TFY_Diver"]],
 		["B_diver_exp_F", ["TFY_Diver_Expl"]]
+		["B_soldier_mine_F", ["TFY_MineSpec"]]
 		];
 	};
 	case 1: {
@@ -85,6 +86,7 @@ switch (_type) do
 		["B_diver_F", ["TFY_Diver"]],
 		["B_diver_TL_F", ["TFY_Diver"]],
 		["B_diver_exp_F", ["TFY_Diver_Expl"]]
+		["B_soldier_mine_F", ["TFY_MineSpec"]]
 		];
 	};
 };

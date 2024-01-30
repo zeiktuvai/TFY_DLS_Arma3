@@ -63,6 +63,7 @@ You can use the below list to set the initial loadout and any respawn loadouts y
 - TFY_Diver_Expl
 - TFY_Diver
 - TFY_Grenadier
+- TFY_MineSpec
 
 [Change Log](/Docs/Changelog.md)  
 

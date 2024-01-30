@@ -1,7 +1,10 @@
 # Changelog
 
 ## [Unreleased]
+
+## [Upcoming Release]
 - Added helper script for filling a vehicle with default items helpful when using ace and AT/AA tools on respawn.
+- Added Mine specialist to loadouts
 
 ## [1.4] - 2024-01-28
 - Updated DLS to allow overriding automatic selection by putting variable in unit init field.
