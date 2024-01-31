@@ -1,3 +1,6 @@
+# This project is now archived and no longer under development.
+As the scope expanded beyond loadouts, I decided to rebrand and expand the scope of it to the Mission Support Framework (MSF).  See [here](https://github.com/zeiktuvai/MSF_Arma_3) for the new project.
+
 # Dynamic Loadout System for Arma 3
 
 The Dynamic Loadout System is intended to make using standard defined loadouts much easier.  Loadouts defined in ACE Arsenal can be inported into this system and used to apply the loadouts to a unit on initial spawn, and allowing players to select their loadout when respawning.
