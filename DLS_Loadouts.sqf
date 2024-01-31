@@ -10,7 +10,7 @@
 	Examples:
 		[class] call DLS_Loadouts;
 
-	Dynamic Loadout System v1.4
+	Dynamic Loadout System v1.5
 */
 
 params ["_class", "_type"];

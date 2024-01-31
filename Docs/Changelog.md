@@ -1,9 +1,8 @@
 # Changelog
 
-## [Unreleased]
+## Project Archived
 
-## [Upcoming Release]
-- Added helper script for filling a vehicle with default items helpful when using ace and AT/AA tools on respawn.
+## [1.5] - 2024-01-31 
 - Added Mine specialist to loadouts
 
 ## [1.4] - 2024-01-28

@@ -1,7 +1,7 @@
 /*
 	Author: zeik_tuvai
 
-	Dynamic Loadout System v1.4
+	Dynamic Loadout System v1.5
 */
 #include "..\DLS_Settings.sqf"
 
